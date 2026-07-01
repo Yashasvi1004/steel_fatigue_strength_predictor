@@ -7,7 +7,7 @@ model = joblib.load('fatigue_model.pkl')
 
 st.set_page_config(page_title="Steel Fatigue Strength Predictor", layout="centered")
 st.title("🔩 Steel Fatigue Strength Predictor")
-st.write("Predict fatigue strength from steel composition and heat treatment parameters, using an XGBoost model trained on the NIMS MatNavi dataset.")
+st.write("Predict fatigue strength from steel composition and heat treatment parameters, using an XGBoost model.")
 
 st.header("Composition (% weight)")
 col1, col2, col3 = st.columns(3)
@@ -64,4 +64,4 @@ if st.button("Predict Fatigue Strength", type="primary"):
     prediction = model.predict(input_data)[0]
     st.success(f"### Predicted Fatigue Strength: **{prediction:.2f} MPa**")
 
-st.caption("Model: XGBoost Regressor | R² ≈ 0.99 on test set | Trained on NIMS MatNavi steel fatigue dataset")
+st.caption("Model: XGBoost Regressor | R² ≈ 0.99 on test set")
